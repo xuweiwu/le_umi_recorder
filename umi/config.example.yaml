@@ -1,0 +1,35 @@
+# LeRobot Recorder Configuration
+# Copy this to config.yaml and customize for your setup
+
+# Dataset settings
+repo_id: user/my_dataset
+output_dir: ./datasets
+fps: 30
+
+# Server connection
+server: https://localhost:8000
+
+# Camera configuration (single mode)
+# Format: INDEX:NAME:WxH
+camera: 0:wrist:640x480
+hand: right  # Which controller the camera is attached to (left/right)
+
+# Bimanual mode (uncomment to enable)
+# bimanual: true
+# camera_left: 0:wrist_left:640x480
+# camera_right: 1:wrist_right:640x480
+
+# Robot URDF for IK visualization (optional, non-bimanual only)
+# urdf: /path/to/robot.urdf
+
+# Task descriptions (select with keys 1-9 during recording)
+tasks:
+  - Pick up the cup
+  - Place cup on shelf
+  - Open the drawer
+  - Close the drawer
+  - Wipe the table
+
+# Path to robot URDF for IK visualization
+urdf: /Users/florianlay/repos/ambient/ambient_urdf/robot.urdf
+

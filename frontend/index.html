@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quest Controller Tracking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Meta Quest Controller Tracking</h1>
+
+        <div id="status" class="status-box">
+            <p><strong>Status:</strong> <span id="connection-status">Disconnected</span></p>
+            <p><strong>Frame Rate:</strong> <span id="frame-rate">0</span> Hz</p>
+            <p><strong>WebSocket:</strong> <span id="ws-status">Disconnected</span></p>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="server-url">Server URL:</label>
+                <input type="text" id="server-url" placeholder="wss://server-ip:8000/ws (auto-detected)">
+            </div>
+
+            <div class="control-group">
+                <label>Track Controllers:</label>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" id="track-left" checked>
+                        Left Controller
+                    </label>
+                    <label>
+                        <input type="checkbox" id="track-right" checked>
+                        Right Controller
+                    </label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>Coordinate System:</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="coord-system" value="local" checked>
+                        Local Space
+                    </label>
+                    <label>
+                        <input type="radio" name="coord-system" value="world">
+                        World Space
+                    </label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="update-rate">Target Update Rate (Hz):</label>
+                <input type="number" id="update-rate" value="60" min="10" max="90" step="10">
+            </div>
+
+            <button id="connect-btn" class="btn btn-primary">Connect to Server</button>
+            <button id="ar-btn" class="btn btn-success" disabled>Enter AR (Passthrough)</button>
+            <button id="vr-btn" class="btn btn-secondary" disabled>Enter VR</button>
+            <button id="disconnect-btn" class="btn btn-danger" disabled>Disconnect</button>
+        </div>
+
+        <div id="info" class="info-box">
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Enter your server's WebSocket URL (e.g., wss://192.168.1.100:8000/ws)</li>
+                <li>Click "Connect to Server"</li>
+                <li>Put on your Meta Quest 3</li>
+                <li>Click "Enter AR (Passthrough)" to see the real world, or "Enter VR" for full VR</li>
+                <li>You'll see RGB coordinate axes at your controllers (X=Red, Y=Green, Z=Blue)</li>
+            </ol>
+            <p><strong>AR Mode (Recommended):</strong> Passthrough is automatic - you'll see the real world with virtual controller axes overlaid.</p>
+            <p><strong>VR Mode Passthrough (Manual):</strong></p>
+            <ul>
+                <li>Double-tap the side of your Quest headset while in VR</li>
+                <li>Or: Quest browser settings → Enable "Passthrough by default"</li>
+            </ul>
+            <p><strong>Note:</strong> This app requires WebXR support (Meta Quest Browser) and HTTPS.</p>
+        </div>
+
+        <div id="debug" class="debug-box">
+            <h3>Debug Info:</h3>
+            <pre id="debug-output">No data yet...</pre>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

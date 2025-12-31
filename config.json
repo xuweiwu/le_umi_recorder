@@ -1,0 +1,20 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8000,
+    "log_level": "INFO"
+  },
+  "tracking": {
+    "default_coordinate_system": "local",
+    "max_frame_rate": 90,
+    "min_frame_rate": 10
+  },
+  "network": {
+    "max_connections": 10,
+    "timeout_seconds": 300
+  },
+  "frontend": {
+    "default_update_rate": 60,
+    "show_debug": true
+  }
+}

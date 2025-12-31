@@ -1,0 +1,12 @@
+# Visualizer dependencies
+rerun-sdk>=0.20.0
+numpy>=1.24.0
+aiohttp>=3.9.0
+websockets>=12.0
+scipy>=1.10.0
+
+# LeRobot-compatible dataset recording (standalone, no lerobot dependency)
+opencv-python>=4.8.0
+pynput>=1.7.6
+pyarrow>=14.0.0
+pyyaml>=6.0
