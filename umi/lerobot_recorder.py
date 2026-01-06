@@ -405,7 +405,7 @@ class LeRobotDatasetRecorder:
     def _setup_robot_ik(self):
         """Initialize URDF visualizer and IK solver."""
         import placo
-        from rerun_urdf import RerunURDFVisualizer
+        from umi.utils.rerun_urdf import RerunURDFVisualizer
 
         print(f"\nInitializing robot IK with URDF: {self.urdf_path}")
 
