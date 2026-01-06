@@ -19,7 +19,7 @@ dependencies = [
 ]
 
 [project.scripts]
-umi-recorder = "umi.lerobot_recorder:main"
+umi-recorder = "umi.lerobot_recorder:cli"
 umi-visualize = "umi.visualize_dataset:main"
 umi-calibrate-gripper = "umi.calibrate_gripper:main"
 

@@ -1004,8 +1004,13 @@ Examples:
         recorder.finalize()
 
 
-if __name__ == '__main__':
+def cli():
+    """Entry point for the CLI (wraps async main)"""
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
         print('\nExiting...')
+
+
+if __name__ == '__main__':
+    cli()
